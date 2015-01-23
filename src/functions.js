@@ -13,8 +13,7 @@
 */
 
 //your code here
-function uselessFunction()
-{
+function uselessFunction(){
 	return null;
 }
 //end your code
@@ -32,8 +31,23 @@ var barType = typeof bar;
 * This should return false if any value in the array cannot be doubled.
 */
 
-//your code here
 
+//your code here
+bar = function(doubleArray)
+{
+	var temp;
+	for(i = 0; i < doubleArray.length;i++)
+	{
+		temp = doubleArray[i];
+		doubleArray[i] = doubleArray[i]*2;
+		
+		if(temp*2 != doubleArray[i]
+		{
+			return false;
+		}
+	}
+	return true;
+}
 //end your code
 
 /**
