@@ -13,7 +13,8 @@
 */
 
 //your code here
-function uselessFunction(){
+function uselessFunction(void)
+{
 	return null;
 }
 //end your code
@@ -83,5 +84,36 @@ function GitLog(hash, date, message) {
 */
 
 //your code here
-
+function parseGit(logArray)
+{
+	var gitInstances = [];
+	var space = 0;
+	
+	for(i = 0;i < logArray.length;i++)
+	{
+		gitInstances[i] = new GitLog(0,0,'');
+		
+		for(j = 0; j < logArray[i].length;j++)
+		{
+			if (logArray[i][j] == " ")
+			{
+				space++;
+			}
+			if(space === 0 && logArray[i][j] != " ")
+			{
+				gitInstances[i].hash+=logArray[i][j];
+			}
+			else if(space > 0 || space < 6)
+			{
+				gitInstances[i].date+=logArray[i][j];
+			}
+			else if(space > 7)
+			{
+				gitInstances[i].message+=logArray[i][j];
+			}
+		}
+	}
+	
+	return gitInstances;
+}
 //end your code
