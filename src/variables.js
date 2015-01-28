@@ -34,14 +34,15 @@ function isString(b) {
   //your code here
   var bool;
   
-  if(typeof(b) == String)
-  {
-	bool = true;
-  }
-  else
+  if(typeof(b) !== String)
   {
 	bool = false;
   }
+  else
+  {
+	bool = true;
+  }
+  
   return bool;
   //end your code
 }

@@ -1,4 +1,7 @@
 Start: Fri, 23 Jan 2015 12:08 -0600
-End:
+End: Fri, 23 Jan 2015 12:57 -0600
 Tasks: Working on variables.js, not tested but seems complete. Began work on objects.js
 but ran into issues understanding precisely what information needs to be contained in MessageLog object.
+
+
+
