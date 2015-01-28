@@ -34,7 +34,7 @@ function isString(b) {
   //your code here
   var bool;
   
-  if(typeof(b) == String)
+  if(typeof(b) === 'string')
   {
 	bool = true;
   }
