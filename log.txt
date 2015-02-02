@@ -6,3 +6,7 @@ but ran into issues understanding precisely what information needs to be contain
 Start: Wed, 28 Jan 2015 12:56:54 -0600
 End: Wed, 28 Jan 2015 13:56:15 -0600
 Tasks: Working on variables.js, tested and passes all tests. Began troubleshooting on functions.js
+
+Start: Sun, 1 Feb 2015 17:13:58 -0600
+End: Sun, 1 Feb 2015 19:36:07 -0600
+Tasks: Finished functions.js and objects.js passing all tests.
