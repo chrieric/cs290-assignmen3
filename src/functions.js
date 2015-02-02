@@ -13,10 +13,10 @@
 */
 
 //your code here
-function uselessFunction(void)
+function uselessFunction()
 {
 	return null;
-}
+};
 //end your code
 
 var bar = 'not a function';
@@ -34,6 +34,7 @@ var barType = typeof bar;
 
 
 //your code here
+var doubleArray = [2.50];
 bar = function(doubleArray)
 {
 	var temp;
@@ -42,13 +43,13 @@ bar = function(doubleArray)
 		temp = doubleArray[i];
 		doubleArray[i] = doubleArray[i]*2;
 		
-		if(temp*2 != doubleArray[i]
+		if(temp*2 != doubleArray[i])
 		{
 			return false;
 		}
 	}
 	return true;
-}
+};
 //end your code
 
 /**
@@ -62,7 +63,7 @@ function GitLog(hash, date, message) {
     this.hash = hash;
     this.date = date;
     this.message = message;
-}
+};
 
 /**
 * Create a function called parseGit to parse Git commit logs
@@ -91,29 +92,12 @@ function parseGit(logArray)
 	
 	for(i = 0;i < logArray.length;i++)
 	{
-		gitInstances[i] = new GitLog(0,0,'');
+		gitInstances[i] = new GitLog;
 		
-		for(j = 0; j < logArray[i].length;j++)
-		{
-			if (logArray[i][j] == " ")
-			{
-				space++;
-			}
-			if(space === 0 && logArray[i][j] != " ")
-			{
-				gitInstances[i].hash+=logArray[i][j];
-			}
-			else if(space > 0 || space < 6)
-			{
-				gitInstances[i].date+=logArray[i][j];
-			}
-			else if(space > 7)
-			{
-				gitInstances[i].message+=logArray[i][j];
-			}
-		}
+		gitInstances[i].hash = logArray[i].slice(0,7);
+		gitInstances[i].date = new Date(logArray[i].slice(9,39));
+		gitInstances[i].message = logArray[i].slice(40,logArray.lastIndexOf('"'));
 	}
-	
 	return gitInstances;
-}
+};
 //end your code
