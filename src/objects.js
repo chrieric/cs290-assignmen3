@@ -9,13 +9,9 @@
 */
 
 function returnObjectLiteral() {
-  return {
-	type:'Goldfish',
-	brand:'Pepperidge Farm',
-	flavor:'Cheddar',
-	count:200}; //Modify ONLY this line
+  return {type:'Goldfish',brand:'Pepperidge Farm',flavor:'Cheddar',count:2000} //Modify ONLY this line
   //end your code
-}
+};
 
 /**
 * Create a constructor function for a `MessageLog` object.
@@ -46,30 +42,26 @@ function MessageLog(user)
 	this.user = user;
 	this.s_Log = [];
 	this.r_Log = [];
-	this.direction = direction;
-	
+	this.s_Count = 0;
 	
 	this.logMessage = function(messageText,direction)
 	{
-		if(this.direction == 0)
+		if(direction == 0)
 		{
+			this.s_Count++;
 			this.s_Log.unshift(messageText);
-			if(s_Log.length > 5)
+			if(this.s_Log.length > 5)
 			{
-				s_Log.pop();
+				this.s_Log.pop();
 			}
 		}
-		else if(this.direction == 1)
+		else if(direction == 1)
 		{
 			this.r_Log.unshift(messageText);
-			if(r_Log.length > 5)
+			if(this.r_Log.length > 5)
 			{
-				r_Log.pop();
+				this.r_Log.pop();
 			}
-		}
-		else
-		{
-			//intentionally blank
 		}
 	};
 	
@@ -80,14 +72,14 @@ function MessageLog(user)
 	
 	this.totalSent = function()
 	{
-		return this.s_Log.length;
+		return this.s_Count;
 	};
 	
-	this.totalRecieved = function()
+	this.totalReceived = function()
 	{
 		return this.r_Log.length;
 	};
-}
+};
 //end your code
 
 /**
@@ -96,10 +88,11 @@ function MessageLog(user)
 * received.
 */
 //your code here
-MessageLog.lastRecievedMessage() = function
+MessageLog.prototype.lastReceivedMessage = function()
 {
-	return this.r_Log.pop();
-}
+	return this.r_Log[this.r_Log.length-1];
+	
+};
 //end your code
 
 /**
@@ -109,8 +102,8 @@ MessageLog.lastRecievedMessage() = function
 */
 
 //your code here
-var myLog = new MessageLog("BlackHatGuy");
-myLog.logMessage('foo',1);
-myLog.logMessage('bar',1);
-myLog.logMessage('baz',1);
+this.myLog = new MessageLog("BlackHatGuy");
+this.myLog.logMessage('foo',1);
+this.myLog.logMessage('bar',1);
+this.myLog.logMessage('baz',1);
 //end your code
